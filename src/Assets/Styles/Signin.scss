@@ -1,0 +1,124 @@
+@import './Variables.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background-color: $blue;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-direction: column; /* Column direction for small screens */
+}
+
+.banner-container, .form-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.banner-container {
+    height: 100vh; /* Percentage height for responsive design */
+    background-color: $pink;
+}
+
+.form-container {
+    height: 100vh; /* Fixed height for form container */
+    background-color: $green;
+}
+
+
+// Skeleton media queries
+
+//Mobile Screens that are (<=600px)
+
+@media (max-width:600px) {
+    .main-container{
+        flex-direction: column;
+        width: 100vw;
+        
+    }
+    .banner-container{
+        height: 40vh;
+        background-color: $pink;
+    }
+    .form-container{
+        height: 60vh;
+        background-color: $green;
+    }
+}
+
+//Tablet Screens that are (<=768px)
+
+@media (min-width: 601px) and (max-width: 768px){
+    .main-container{
+        flex-direction: column;
+        width: 100vw;   
+    }
+    .banner-container{
+        height: 40vh;
+        background-color: orange;
+    }
+    .form-container{
+        height: 60vh;
+        background-color: dodgerblue;
+    }
+}
+
+//Laptop Screens that are (<=1024px)
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-container{
+        flex-direction: row;
+        // width: 100vw;
+    }
+    .banner-container{
+        // width: 50%;   
+        height: 100vh;
+         background-color: purple;
+       
+    }
+    .form-container{
+        // width: 50%;   
+        height: 100vh;
+        background-color: black;
+    }
+}
+
+//Desktop screen (<=1440px)
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .main-container{
+        flex-direction:row;
+    }
+    .banner-container{
+        height: 100vh;
+        background-color: yellow;
+    }
+    .form-container{
+        height: 100vh;
+        background-color: tan;
+    }
+
+}
+
+//Desktop screens that are large (>1440px)
+
+@media (min-width:1440px) {
+    .main-container{
+        flex-direction: row;
+    }
+    .banner-container{
+        height: 100vh;
+        background-color: green;
+    }
+    .form-container{
+        height: 100vh;
+        background-color: red;
+    }
+}
