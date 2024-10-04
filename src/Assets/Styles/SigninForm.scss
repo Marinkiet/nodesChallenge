@@ -1,0 +1,110 @@
+@import '../Styles/Variables.scss';
+
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.signin-form,.sigin-options{
+    @extend .container;
+}
+
+.signin-form{
+    height: 60%;
+    background-color: pink;
+   
+}
+
+.sigin-options{
+    height: 40%;
+    background-color: black;
+}
+
+.sigin-header-container{
+    width: 100%;
+    height: 20%;
+    // background-color: tan;
+
+}
+.sigin-header{
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.form-inputs-container{
+    width: 100%;
+    height: 60%;
+    // background-color: rebeccapurple;
+
+
+}
+.email-input, .password-input{
+    height: 100%;
+}
+.sign-in-button-container{
+    width: 100%;
+    height: 20%;
+    // background-color: brown;
+}
+.signin-button{
+    width: 100%;
+    height: 100%;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+@mixin tablet {
+    .signin-form {
+        background-color: white;
+        padding:50px 150px 50px 150px;
+        
+    }
+    .sigin-options {
+        background-color: dodgerblue;
+    }
+    .sigin-header{
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+}
+
+@mixin desktop {
+    .signin-form {
+        background-color: white;
+        padding:180px 80px 10px 80px;
+        
+    }
+    .sigin-options {
+        background-color: dodgerblue;
+    }
+    .sigin-header{
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+}
+
+// Apply Media Queries
+// @media (max-width: 600px) {
+//     @include mobile;
+// }
+
+@media (min-width: 601px) and (max-width: 768px) {
+    @include tablet;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // @include laptop;
+    @include tablet;
+}
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    @include desktop;
+}
+
+// @media (min-width: 1440px) {
+//     @include large-desktop;
+// }
