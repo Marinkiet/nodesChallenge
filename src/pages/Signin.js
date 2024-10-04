@@ -3,26 +3,22 @@ import MainBanner from "../components/banners/MainBanner";
 import '../Assets/Styles/Signin.scss'
 function Signin() {
   return (
-   <div className="main-container">
-
-    {/* banner container */}
-    <div className="banner-container">
-      {/* banner */}
-      {/* <MainBanner/> */}
-    </div>
-
-    {/* form container */}
-    <div className="form-container">
-      <div>
-        {/* Signin form */}
+    <div className="main-container">
+      {/* Banner Container */}
+      <div className="banner-container">
+        <MainBanner />
       </div>
-      <div>
-        {/* Signin options */}
+
+      {/* Form Container */}
+      <div className="form-container">
+        <div>
+          {/* Sign-in form */}
+        </div>
+        <div>
+          {/* Sign-in options */}
+        </div>
       </div>
-      
     </div>
-    
-  </div>
   )
 }
 
