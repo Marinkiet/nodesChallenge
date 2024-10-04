@@ -33,12 +33,13 @@ body {
 .form-container {
     @extend .container;
     background-color: $green;
+    flex-direction:column;
 }
 
 .banner-img-container {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .banner-img {
@@ -54,11 +55,11 @@ body {
         flex-direction: column;
     }
     .banner-container {
-        height: 40vh;
+        height: 40%;
         background-color: $pink;
     }
     .form-container {
-        height: 60vh;
+        height: 60%;
     }
 }
 
@@ -67,11 +68,11 @@ body {
         flex-direction: column;
     }
     .banner-container {
-        height: 40vh;
+        height: 40%;
         background-color: orange;
     }
     .form-container {
-        height: 60vh;
+        height: 60%;
         background-color: dodgerblue;
     }
 }
@@ -122,7 +123,8 @@ body {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    @include laptop;
+    // @include laptop;
+    @include tablet;
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
