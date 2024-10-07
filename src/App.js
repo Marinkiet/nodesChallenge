@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Dashboard from "./pages/Dashboard"; 
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import StickyWall from "./pages/StickyWall";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/stickywall" element={<StickyWall />} />
         </Routes>
       </div>
     </Router>

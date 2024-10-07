@@ -8,7 +8,7 @@ body {
 
 // Main Container
 .main-container {
-    background-color: $blue;
+    // background-color: $blue;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -32,7 +32,7 @@ body {
 
 .form-container {
     @extend .container;
-    background-color: $green;
+    // background-color: $green;
     flex-direction:column;
 }
 
@@ -56,7 +56,7 @@ body {
     }
     .banner-container {
         height: 40%;
-        background-color: $pink;
+        // background-color: $pink;
     }
     .form-container {
         height: 60%;
@@ -69,11 +69,11 @@ body {
     }
     .banner-container {
         height: 40%;
-        background-color: orange;
+        // background-color: orange;
     }
     .form-container {
         height: 60%;
-        background-color: dodgerblue;
+        // background-color: dodgerblue;
     }
 }
 
@@ -82,10 +82,10 @@ body {
         flex-direction: row;
     }
     .banner-container {
-        background-color: purple;
+        // background-color: purple;
     }
     .form-container {
-        background-color: black;
+        // background-color: black;
     }
 }
 
@@ -94,10 +94,10 @@ body {
         flex-direction: row;
     }
     .banner-container {
-        background-color: yellow;
+        // background-color: yellow;
     }
     .form-container {
-        background-color: tan;
+        // background-color: tan;
     }
 }
 
@@ -106,10 +106,10 @@ body {
         flex-direction: row;
     }
     .banner-container {
-        background-color: green;
+        // background-color: green;
     }
     .form-container {
-        background-color: red;
+        // background-color: red;
     }
 }
 

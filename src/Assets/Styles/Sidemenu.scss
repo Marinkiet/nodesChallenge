@@ -1,0 +1,255 @@
+@import './Variables.scss';
+@import './SigninForm.scss';
+
+.offcanvasSettings {
+    height: 100vh;
+}
+hr{
+    color: gray;
+}
+
+.offcanvas-top-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    // background-color: purple;
+}
+
+.search-form {
+    // background-color: dodgerblue;
+    width: 100%;
+}
+
+.offcanvasSettings .offcanvas-body {
+    height: 100%;
+}
+
+.offcanvas-header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.offcanvas-header .btn-close {
+    color: #333;
+    font-weight: 700;
+}
+
+.custom-close {
+    color: #333;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    padding: 0;
+    // background-color: yellow;
+
+}
+
+.input-with-icon {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: grey;
+    font-size: 20px;
+}
+
+.offcanvas-body {
+    overflow-y: auto;
+    /* Allows vertical scrolling */
+    height: calc(100vh - 56px);
+    /* Full height minus header height (adjust as necessary) */
+    // background-color: dodgerblue;
+}
+
+.item-container {
+    // background-color: rgb(157, 131, 136);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: lightgray;
+        /* Background color on hover */
+
+        .item-right-icon {
+            background-color: white; 
+            transition: background-color 0.3s ease; 
+          }
+    }
+    
+
+}
+
+.item-left-icon {
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    // width: 10%;
+    // background-color: rgb(42, 146, 96);
+}
+
+.item-title {
+    // background-color: rgb(175, 53, 77);
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+
+    &:hover {
+        font-weight: 700;
+        /* Background color on hover */
+    }
+}
+
+.item-right-icon {
+    display: flex;
+    justify-content: center;
+    width: 5%;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 18px;
+    align-items: center;
+    background-color: rgb(223, 223, 223);
+    border-radius: 3px;
+
+    span{
+        font-weight: 700;
+        font-size: 12px;
+    }
+}
+
+.task-container {}
+
+h6 {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.list-container {
+    // background-color: yellow;
+}
+
+.tags-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    // background-color: $pink;
+}
+
+.tag-buttons-container {
+    // background-color: pink;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag-btn {
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+
+}
+
+.signout-btn {
+    // background-color: $green;
+}
+
+.signout-container {
+    margin-top: 7%;
+    ;
+}
+
+.input-with-icon .form-control {
+    padding-left: 40px;
+}
+
+
+
+@mixin tablet {
+    .offcanvasSettings {
+        width: 40%;
+        border-radius: 20px;
+        margin: 20px;
+        // background-color: pink;
+    }
+}
+
+
+// Mixins for Responsive Media Queries
+@mixin mobile {}
+
+
+@mixin laptop {
+    .offcanvasSettings {
+        width: 25%;
+        height: 100%;
+        border-radius: 20px;
+        margin: 20px;
+        background-color: pink;
+    }
+
+}
+
+@mixin desktop {
+    .offcanvasSettings {
+        width: 25%;
+        height: 100%;
+        border-radius: 20px;
+        margin: 20px;
+        background-color: pink;
+    }
+}
+
+@mixin large-desktop {
+    .offcanvasSettings {
+        width: 25%;
+        height: 100%;
+        border-radius: 20px;
+        margin: 20px;
+        background-color: pink;
+    }
+}
+
+
+@media (max-width: 600px) {
+    @include mobile;
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    @include tablet;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    // @include laptop;
+    @include tablet;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+    @include desktop;
+}
+
+@media (min-width: 1440px) {
+    @include large-desktop;
+}
