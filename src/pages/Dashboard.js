@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { IoMenu } from "react-icons/io5";
@@ -18,7 +18,11 @@ import MenuItemBtn from "../components/buttons/MenuItemBtn";
 import TagList from "../components/buttons/TagList";
 import { useNavigate } from "react-router-dom";
 import Lists from "../components/buttons/Lists";
-
+import StickyWall from "./StickyWall";
+const notes = [
+  { title: "Note 1 title", content: "content of note 1" },
+  { title: "Note 2", content: "ontent of note 2" },
+];
 function Dashboard() {
   const navigate = useNavigate();
   const [screenSize, setScreenSize] = useState(window.innerWidth);
@@ -26,21 +30,41 @@ function Dashboard() {
 
   const getIcon = () => {
     if (screenSize < 601) {
-      return <IoClose />; // Mobile icon
+      // Mobile icon
+      return <IoClose />
     } else if (screenSize < 1024) {
-      return <AiOutlineMenuFold />; // Tablet icon
+      // Tablet icon
+      return <AiOutlineMenuFold />
     } else {
-      return <IoMenu />; // Desktop icon
+      // Desktop icon
+      return <IoMenu />
     }
   }
 
+  const handleResize = () => {
+    setScreenSize(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [])
+
   return (
     <>
-      <div className="dasboard-nav-header">
-        <IoMenu onClick={() => setShow((s) => !s)} />
-        <h3>today</h3>
-
+      <div className={`content-container ${show ? 'shifted' : ''}`}>
+        <div className="dasboard-nav-header">
+          <div className="header-menu">
+            <IoMenu size={30} onClick={() => setShow((s) => !s)} style={{ color: show ? "transparent" : "black" }} />
+          </div>
+          <div className="header-title"> <span>Sticky Wall</span></div>
+          <div className="addIcon"><MdAdd size={30} /></div>
+          <div>
+          </div>
+        </div>
+        <StickyWall notes={notes} />
       </div>
+      
       <div>
         <Offcanvas placement="start" show={show} onHide={() => setShow(false)} className="offcanvasSettings">
           <Offcanvas.Header>
@@ -50,7 +74,6 @@ function Dashboard() {
                 {getIcon()}
               </button>
             </div>
-
             <form className="search-form d-flex" role="search">
               <div className="input-with-icon">
                 <IoSearch className="search-icon" />
@@ -72,23 +95,21 @@ function Dashboard() {
               <MenuItemBtn icon={MdNavigateNext} title="Upcoming" count={12} />
               <MenuItemBtn icon={FaListCheck} title="Today" count={5} />
               <MenuItemBtn icon={BsCalendarDate} title="Calendar" />
-              <MenuItemBtn icon={FaNoteSticky} title="Sticky Wall" to="/stickywall"/>
+              <MenuItemBtn icon={FaNoteSticky} title="Sticky Wall" to="/stickywall" />
             </div>
             <hr></hr>
             <div className="list-container">
-              <Lists icon={MdAdd}/>
+              <Lists icon={MdAdd} />
             </div>
             <hr></hr>
             <div className="tags-container">
-                <TagList />
+              <TagList />
             </div>
             <hr></hr>
             <div className="settings-container">
-            <MenuItemBtn icon={FaSlidersH} title="Settings" />
-      
+              <MenuItemBtn icon={FaSlidersH} title="Settings" />
             </div>
             <div className="signout-btn">
-              {/* tags section */}
               <div className="signout-container">
                 <button type="button" className="btn btn-warning signin-button">Sign out</button>
               </div>
