@@ -1,15 +1,27 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import '../../Assets/Styles/Sidemenu.scss';
+import '../../Assets/Styles/Tags.scss';
+import '../../Assets/Styles/Variables.scss'
+import { MdAdd } from "react-icons/md";
 
 const TagList = () => {
     const [tags, setTags] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [newTag, setNewTag] = useState("");
 
+    // Generate random pastel color
+    const generatePastelColor = () => {
+        const hue = Math.floor(Math.random() * 360); // Random hue
+        const saturation = 70 + Math.random() * 10; // Saturation between 70-80%
+        const lightness = 85 + Math.random() * 10;  // Lightness between 85-95%
+        return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    };
+
     const addTag = () => {
-        if (newTag.trim() && !tags.includes(newTag.trim())) {
-            setTags([...tags, newTag.trim()]);
+        if (newTag.trim() && !tags.some(tag => tag.name === newTag.trim())) {
+            // Add tag with a random color
+            const newTagObject = { name: newTag.trim(), color: generatePastelColor() };
+            setTags([...tags, newTagObject]);
             setNewTag("");
             setShowModal(false);
         }
@@ -28,8 +40,13 @@ const TagList = () => {
             </div>
             <div className="tag-buttons-container">
                 {tags.map((tag, index) => (
-                    <button key={index} type="button" className="btn tag-btn btn-light">
-                        {tag}
+                    <button
+                        key={index}
+                        type="button"
+                        className="btn tag-btn btn-light"
+                        style={{ backgroundColor: tag.color }}
+                    >
+                        {tag.name}
                     </button>
                 ))}
                 <button
@@ -37,11 +54,10 @@ const TagList = () => {
                     className="btn tag-btn btn-light"
                     onClick={() => setShowModal(true)}
                 >
-                    + Add Tag
+                    <MdAdd color="grey" size={15}/> Add Tag
                 </button>
             </div>
 
-           
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add New Tag</Modal.Title>

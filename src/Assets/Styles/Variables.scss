@@ -1,6 +1,44 @@
-$pink:pink;
-$blue:lightblue;
-$green:lightgreen;
 
-$primary-color: #007bff;
-$banner-bg: #f8f9fa;
+//Colors
+$primary_grey:rgb(68, 68, 68);
+$secondary_grey:rgb(235,235,235);
+$primary_white:rgb(235,235,235);
+$primary_black:rgb(17, 17, 17);
+//Screen Sizes
+$screen-mobile: 600px;
+$screen-tablet-min: 601px;
+$screen-tablet-max: 768px;
+$screen-large-tablet-min: 769px;
+$screen-large-tablet-max: 1024px;
+$screen-desktop-min: 1025px;
+$screen-desktop-max: 1440px;
+$screen-large-desktop: 1440px;
+
+
+//Screen mixins
+// mixins.scss
+@mixin mobile {
+    // Styles for mobile
+}
+
+@mixin tablet {
+    // Styles for tablet
+}
+
+@mixin large-tablet {
+    // Styles for large tablet
+}
+
+@mixin desktop {
+    // Styles for desktop
+}
+
+@mixin large-desktop {
+    // Styles for large desktop
+}
+
+body{
+    font-family: "Lexend Deca";
+    padding: 0;
+    margin:0;
+};

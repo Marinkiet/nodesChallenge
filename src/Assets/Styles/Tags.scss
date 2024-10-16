@@ -1,0 +1,37 @@
+
+@import '../Styles/Variables.scss';
+
+.tags-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    // background-color: pink;
+}
+
+.tag-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: orange;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag-btn {
+    border-radius: 8px;
+    padding: 5px 8px 5px 8px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    background-color: $secondary_grey;
+    color:$primary_grey;
+    font-weight: 700;
+
+}
+
+button{
+    color:$primary_grey;
+}

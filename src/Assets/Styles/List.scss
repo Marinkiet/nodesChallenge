@@ -1,0 +1,50 @@
+@import './Variables.scss';
+//list colors
+
+.add-new-list-items-wrapper{
+    // background-color: blue;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.add-new-list-items-container{
+    // background-color: rgb(13, 255, 0);
+    // height: 100%;
+    width: 100%;
+    // display: flex;
+    // justify-content:center;
+    // align-items: center;
+    // flex-direction: column;
+    padding: 10px;
+    border: 1px solid rgb(227 227 227);
+    // border-radius: 5px;
+    // overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // width: 298px;
+    height: 120px;
+    opacity: 1;
+    background-color: rgb(244, 244, 244);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px;
+}
+.add-new-list-item-input-container{
+    width: 100%;
+
+}
+.add-new-list-item-input-color-palet{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    // background-color: rgb(255, 0, 230);
+    .square {
+      justify-content: space-between;
+    }
+}
